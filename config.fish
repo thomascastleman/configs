@@ -28,6 +28,7 @@ function fish_prompt
 	set_color normal
 end
 
+# adapted from https://github.com/jonhoo/configs/blob/master/shell/.config/fish/config.fish
 function fish_greeting
 	echo
 	echo -e (uname -ro | awk '{print " \\\\e[1mOS: \\\\e[0;32m"$0"\\\\e[0m"}')
