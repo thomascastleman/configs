@@ -1,0 +1,27 @@
+[ui "color"]
+	ui = always
+[color]
+	ui = true
+[core]
+	autocrlf = input
+	safecrlf = true
+[alias]
+	a = add .
+	c = commit
+	s = status
+	st = status
+	lg = log --oneline
+	last = log -1 HEAD
+	ps = push
+	pl = pull
+[pull]
+	ff = only
+[push]
+	default = simple
+[help]
+	autocorrect = 1
+[diff]
+	algorithm = patience
+	compactionHeuristic = true
+[protocol]
+	version = 2
