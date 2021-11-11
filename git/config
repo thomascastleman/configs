@@ -6,7 +6,7 @@
 	autocrlf = input
 	safecrlf = true
 [alias]
-	a = add .
+	a = add
 	c = commit
 	s = status
 	st = status
