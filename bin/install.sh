@@ -4,7 +4,7 @@
 source ~/configs/bin/stdout.sh
 
 function install_homebrew() {
-  which brew
+  which brew >/dev/null
   if [[ $? != 0 ]] ; then
     dotsay "@green installing homebrew"
 
@@ -19,8 +19,8 @@ function install_homebrew() {
       >>~/.bash_profile
     echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.profile
   else
-    dotsay "@magenta updating homebrew"
-    brew update
+    dotsay "@magenta updating homebrew..."
+    brew update > /dev/null 2>&1
   fi
 }
 
@@ -41,7 +41,7 @@ function install_fzf() {
 }
 
 function install_zsh() {
-  which zsh
+  which zsh >/dev/null
   if [[ $? != 0 ]] ; then
     dotsay "@yellow installing zsh..."
     sudo apt-get install zsh -y
@@ -51,7 +51,7 @@ function install_zsh() {
 }
 
 function install_ohmyzsh() {
-  if [ ! -d "~/.oh-my-zsh" ]; then
+  if [ ! -d "$HOME/.oh-my-zsh" ]; then
     dotsay "@yellow installing ohmyzsh..."
 
     sh -c "$(curl -fsSL \
@@ -62,19 +62,27 @@ function install_ohmyzsh() {
 }
 
 function install_zsh_autosuggestions() {
-  dotsay "@yellow installing zsh_autosuggestions..."
+	if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
+		dotsay "@green zsh-autosuggestions already installed"
+	else
+		dotsay "@yellow installing zsh_autosuggestions..."
 
-  # NOTE: This clones into the ohmyzsh plugins directory
-  git clone https://github.com/zsh-users/zsh-autosuggestions \
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+		# NOTE: This clones into the ohmyzsh plugins directory
+		git clone https://github.com/zsh-users/zsh-autosuggestions \
+			${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	fi
 }
 
 function install_zsh_syntax_highlighting() {
-  dotsay "@yellow installing zsh_syntax_highlighting..."
+	if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
+		dotsay "@green zsh-syntax-highlighting already installed"
+	else
+		dotsay "@yellow installing zsh_syntax_highlighting..."
 
-  # NOTE: This clones into the ohmyzsh plugins directory
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+		# NOTE: This clones into the ohmyzsh plugins directory
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+			${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	fi
 }
 
 function install_powerlevel10k() {
@@ -98,7 +106,7 @@ function install_powerlevel10k() {
       $P10K_FONT_PATH/MesloLGS%20NF%20Italic.ttf \
       $P10K_FONT_PATH/MesloLGS%20NF%20Bold%20Italic.ttf
   else
-    echo "MesloGS NF fonts are already installed!"
+		dotsay "@green MesloGS NF fonts are already installed!"
   fi
 }
 
@@ -126,7 +134,7 @@ function install_tmux() {
 }
 
 function install_alacritty() {
-  which alacritty
+  which alacritty >/dev/null
   if [[ $? != 0 ]]; then
     dotsay "@yellow installing alacritty..."
     sudo snap install alacritty --classic
@@ -147,24 +155,26 @@ function install_neovim() {
 dotheader "Installing..."
 
 # Link config files to their actual locations 
-dotsay "@white setting up zsh config"
+dotsay "@blue setting up zsh config"
 ln -sf ~/configs/zsh/zshrc ~/.zshrc
 
-dotsay "@white setting up tmux config"
+dotsay "@blue setting up tmux config"
 ln -sf ~/configs/.tmux.conf ~/.tmux.conf
 
-dotsay "@white setting up git config"
+dotsay "@blue setting up git config"
 ln -sf ~/configs/git/config ~/.gitconfig
 
-dotsay "@white setting up neovim config"
-ln -sf ~/configs/nvim ~/.config/nvim
+dotsay "@blue setting up neovim config"
+if [ ! -d ~/.config/nvim ]; then 
+	ln -sf ~/configs/nvim ~/.config/nvim
+fi
 
-dotsay "@white setting up alacritty config"
+dotsay "@blue setting up alacritty config"
 mkdir -p ~/.config/alacritty
 ln -sf ~/configs/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Ucomment if I use fish again
-# dotsay "@white setting up fish config"
+# dotsay "@blue setting up fish config"
 # ln -sf ~/configs/fish/config.fish ~/.config/fish/config.fish
 
 # Install everything
