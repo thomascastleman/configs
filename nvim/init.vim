@@ -8,8 +8,9 @@ set relativenumber
 set autoindent					"copy indent from current line when starting a new line
 set tabstop=2						"number of space on a <Tab> character
 set shiftwidth=2				"let indent correspond to a single Tab
-set softtabstop=2				"inserts combo of space and tab to simulate tabstop
+set softtabstop=0				"inserts combo of space and tab to simulate tabstop
 set smarttab
+set expandtab
 
 set clipboard=unnamed " TODO: This doesn't work at the moment
 

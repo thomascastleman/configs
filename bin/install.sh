@@ -62,27 +62,27 @@ function install_ohmyzsh() {
 }
 
 function install_zsh_autosuggestions() {
-	if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
-		dotsay "@green zsh-autosuggestions already installed"
-	else
-		dotsay "@yellow installing zsh_autosuggestions..."
+  if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]; then
+    dotsay "@green zsh-autosuggestions already installed"
+  else
+    dotsay "@yellow installing zsh_autosuggestions..."
 
-		# NOTE: This clones into the ohmyzsh plugins directory
-		git clone https://github.com/zsh-users/zsh-autosuggestions \
-			${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-	fi
+    # NOTE: This clones into the ohmyzsh plugins directory
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
+      ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  fi
 }
 
 function install_zsh_syntax_highlighting() {
-	if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
-		dotsay "@green zsh-syntax-highlighting already installed"
-	else
-		dotsay "@yellow installing zsh_syntax_highlighting..."
+  if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
+    dotsay "@green zsh-syntax-highlighting already installed"
+  else
+    dotsay "@yellow installing zsh_syntax_highlighting..."
 
-		# NOTE: This clones into the ohmyzsh plugins directory
-		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-			${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-	fi
+    # NOTE: This clones into the ohmyzsh plugins directory
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+      ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  fi
 }
 
 function install_powerlevel10k() {
@@ -106,7 +106,7 @@ function install_powerlevel10k() {
       $P10K_FONT_PATH/MesloLGS%20NF%20Italic.ttf \
       $P10K_FONT_PATH/MesloLGS%20NF%20Bold%20Italic.ttf
   else
-		dotsay "@green MesloGS NF fonts are already installed!"
+    dotsay "@green MesloGS NF fonts are already installed!"
   fi
 }
 
@@ -166,7 +166,7 @@ ln -sf ~/configs/git/config ~/.gitconfig
 
 dotsay "@blue setting up neovim config"
 if [ ! -d ~/.config/nvim ]; then 
-	ln -sf ~/configs/nvim ~/.config/nvim
+  ln -sf ~/configs/nvim ~/.config/nvim
 fi
 
 dotsay "@blue setting up alacritty config"
