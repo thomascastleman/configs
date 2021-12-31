@@ -1,0 +1,60 @@
+# Enable Powerlevel11k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/.cargo/bin:$HOME/bin:/usr/local/bin:$PATH
+
+# Allow Homebrew to update env variables
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+	autojump
+	copydir
+	git 
+	sudo
+	vi-mode
+	zsh-autosuggestions
+	zsh-syntax-highlighting 
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# Powerlevel10k setup
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Setup FZF (this gotta stay at bottom idk why)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# bind zsh-autosuggestion to cmd-space
+bindkey '^ ' autosuggest-accept
+
+# Use all our aliases
+source ~/configs/zsh/aliases.zsh
+
+# See https://github.com/zsh-users/zsh-autosuggestions/issues/141#issuecomment-210615799
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+
+# Setup Opam
+source ~/.opam/opam-init/init.zsh >/dev/null 2>/dev/null

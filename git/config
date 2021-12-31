@@ -14,7 +14,7 @@
 	last = log -1 HEAD
 	ps = push
 	pl = pull
-    graph = log --all --graph --decorate --oneline
+  graph = log --all --graph --decorate --oneline
 [pull]
 	ff = only
 [push]
@@ -26,3 +26,6 @@
 	compactionHeuristic = true
 [protocol]
 	version = 2
+[user]
+	name = Thomas Castleman
+	email = thomascastleman0@gmail.com
