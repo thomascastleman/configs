@@ -46,6 +46,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'		" display icons
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 " Color scheme
@@ -97,3 +100,12 @@ require'lualine'.setup {
   extensions = {}
 }
 END
+
+" ================== Rust =================
+" rustfmt
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
+
+au Filetype rust set colorcolumn=100 " 100 char ruler
+au Filetype rust source ~/.config/nvim/indentwidth4.vim " indent with 4 spaces
