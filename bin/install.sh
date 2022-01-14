@@ -86,7 +86,7 @@ function install_zsh_syntax_highlighting() {
 }
 
 function install_powerlevel10k() {
-  if [ -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]; then
+  if [ ! -d ~/.powerlevel10k ]; then
     dotsay "@yellow installing powerlevel10k theme"
 
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
@@ -154,6 +154,19 @@ function install_neovim() {
 
 dotheader "Installing..."
 
+# Install everything
+install_homebrew  # Make sure this happens before all else
+install_fzf
+install_zsh
+install_ohmyzsh
+install_zsh_autosuggestions
+install_zsh_syntax_highlighting
+install_powerlevel10k
+install_base16_shell
+select_base16_theme
+install_alacritty
+install_neovim
+
 # Link config files to their actual locations 
 dotsay "@blue setting up zsh config"
 ln -sf ~/configs/zsh/zshrc ~/.zshrc
@@ -177,15 +190,3 @@ ln -sf ~/configs/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 # dotsay "@blue setting up fish config"
 # ln -sf ~/configs/fish/config.fish ~/.config/fish/config.fish
 
-# Install everything
-install_homebrew
-install_fzf
-install_zsh
-install_ohmyzsh
-install_zsh_autosuggestions
-install_zsh_syntax_highlighting
-install_powerlevel10k
-install_base16_shell
-select_base16_theme
-install_alacritty
-install_neovim
