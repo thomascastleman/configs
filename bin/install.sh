@@ -121,7 +121,7 @@ function install_base16_shell() {
 
 function select_base16_theme() {
   dotsay "@magenta selected base16 color theme"
-  ln -sf ~/.config/base16-shell/scripts/base16-chalk.sh ~/.base16_theme
+  ln -sf ~/.config/base16-shell/scripts/base16-flat.sh ~/.base16_theme
 }
 
 function install_tmux() {
