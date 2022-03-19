@@ -5,14 +5,17 @@ set number
 set relativenumber
 
 " Indentation
-set autoindent					"copy indent from current line when starting a new line
-set tabstop=2						"number of space on a <Tab> character
-set shiftwidth=2				"let indent correspond to a single Tab
-set softtabstop=0				"inserts combo of space and tab to simulate tabstop
+set autoindent          "copy indent from current line when starting a new line
+set tabstop=2           "number of space on a <Tab> character
+set shiftwidth=2        "let indent correspond to a single Tab
+set softtabstop=0       "inserts combo of space and tab to simulate tabstop
 set smarttab
 set expandtab
 
 set clipboard=unnamed " TODO: This doesn't work at the moment
+
+" Highlight all search matches
+:set hlsearch
 
 " Enable mouse in all modes (this prevents scroll from scrolling tmux)
 set mouse=a
@@ -41,6 +44,7 @@ Plug 'markvincze/panda-vim'
 
 " Editing
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
+Plug 'airblade/vim-gitgutter'   " Show git diff in gutter
 
 " Status bar
 Plug 'nvim-lualine/lualine.nvim'
