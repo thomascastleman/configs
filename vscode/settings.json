@@ -11,22 +11,49 @@
     "ocaml-formatter.ocamlformat-path": "/home/tc/.opam/4.11.0/bin/ocamlformat",
     "[ocaml]": {
         "editor.defaultFormatter": "badochov.ocaml-formatter",
-        "editor.formatOnSave": true,
+        "editor.formatOnSave": true
     },
     "[rust]": {
         "editor.inlayHints.enabled": "on",
-        "editor.formatOnSave": true,
+        "editor.formatOnSave": true
     },
     "rust-analyzer.checkOnSave.command": "clippy",
     "editor.lineNumbers": "relative",
     "editor.formatOnSave": true,
     "workbench.startupEditor": "none",
     "todohighlight.keywords": [
-        "todo!",
-        "DEBUG",
-        "NOTE"
+        {
+            "text": "NOTE",
+            "color": "white",
+            "backgroundColor": "#808080",
+            "borderRadius": "3px"
+        },
+        {
+            "text": "todo!",
+            "color": "white",
+            "backgroundColor": "#4d88ff",
+            "borderRadius": "3px"
+        },
+        {
+            "text": "TODO",
+            "color": "white",
+            "backgroundColor": "#4d88ff",
+            "borderRadius": "3px"
+        },
+        {
+            "text": "XXX",
+            "color": "white",
+            "borderRadius": "3px",
+            "backgroundColor": "#ff4d4d"
+        },
+        {
+            "text": "DEBUG",
+            "color": "white",
+            "borderRadius": "3px",
+            "backgroundColor": "#ff33cc"
+        }
     ],
     "workbench.colorTheme": "Dracula Soft",
     "workbench.iconTheme": "Monokai Pro Icons",
-    "cmake.buildBeforeRun": false,
+    "cmake.buildBeforeRun": false
 }
