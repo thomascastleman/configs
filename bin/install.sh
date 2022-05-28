@@ -190,3 +190,8 @@ ln -sf ~/configs/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 # dotsay "@blue setting up fish config"
 # ln -sf ~/configs/fish/config.fish ~/.config/fish/config.fish
 
+dotsay "@blue setting up redshift config"
+ln -sf ~/configs/redshift.conf ~/.config/redshift.conf
+
+dotsay "@blue setting up vscode config"
+ln -sf ~/configs/vscode/settings.json ~/.config/Code/User/settings.json
