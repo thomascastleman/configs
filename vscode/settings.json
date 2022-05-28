@@ -1,0 +1,32 @@
+{
+    "editor.rulers": [
+        80,
+        100
+    ],
+    "reason.path.ocamlmerlin": "/home/tc/.opam/4.11.0/bin/ocamlmerlin",
+    "reason.diagnostics.tools": [
+        "merlin"
+    ],
+    "reason.codelens.enabled": true,
+    "ocaml-formatter.ocamlformat-path": "/home/tc/.opam/4.11.0/bin/ocamlformat",
+    "[ocaml]": {
+        "editor.defaultFormatter": "badochov.ocaml-formatter",
+        "editor.formatOnSave": true,
+    },
+    "[rust]": {
+        "editor.inlayHints.enabled": "on",
+        "editor.formatOnSave": true,
+    },
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "editor.lineNumbers": "relative",
+    "editor.formatOnSave": true,
+    "workbench.startupEditor": "none",
+    "todohighlight.keywords": [
+        "todo!",
+        "DEBUG",
+        "NOTE"
+    ],
+    "workbench.colorTheme": "Dracula Soft",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "cmake.buildBeforeRun": false,
+}
