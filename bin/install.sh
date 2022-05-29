@@ -152,6 +152,15 @@ function install_neovim() {
   fi
 }
 
+function install_vim_plug() {
+  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+}
+
+function install_redshift() {
+  sudo apt install redshift 
+}
+
 dotheader "Installing..."
 
 # Install everything
@@ -166,6 +175,8 @@ install_base16_shell
 select_base16_theme
 install_alacritty
 install_neovim
+install_vim_plug
+install_redshift
 
 # Link config files to their actual locations 
 dotsay "@blue setting up zsh config"
