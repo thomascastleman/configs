@@ -57,3 +57,11 @@ zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
 # Setup Opam
 source ~/.opam/opam-init/init.zsh >/dev/null 2>/dev/null
+
+# Clang for Rust ESP32 toolchain
+export LIBCLANG_PATH=~/.espressif/tools/xtensa-esp32-elf-clang/esp-14.0.0-20220415-x86_64-unknown-linux-gnu/lib
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+

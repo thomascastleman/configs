@@ -173,7 +173,7 @@ install_zsh_syntax_highlighting
 install_powerlevel10k
 install_base16_shell
 select_base16_theme
-install_alacritty
+# install_alacritty # NOTE: Install manually, the snap has issues
 install_neovim
 install_vim_plug
 install_redshift

@@ -43,7 +43,7 @@ call plug#begin('~/.local/nvim/plugins')
 Plug 'markvincze/panda-vim'
 
 " Editing
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'airblade/vim-gitgutter'   " Show git diff in gutter
 
 " Status bar
@@ -72,25 +72,14 @@ require'lualine'.setup {
   },
   sections = {
 		lualine_a = {'mode'},
-		lualine_b = {
-			{
-				'tabs',
-				max_length = vim.o.columns / 3, -- maximum width of tabs component
-																				-- can also be a function that returns value of max_length dynamicaly
-				mode = 2, -- 0  shows tab_nr
-									-- 1  shows tab_name
-									-- 2  shows tab_nr + tab_name
-				tabs_color = {
-					active = 'lualine_{section}_normal',   -- color for active tab
-					inactive = 'lualine_{section}_inactive', -- color for inactive tab
-				},
-			}
-		},
-    lualine_c = {'branch', 'diff', 'diagnostics'},
-    lualine_d = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+		lualine_b = {{
+			'filename',
+			path = 0,
+		}},
+		lualine_c = {'diff'},
+    lualine_x = {'filetype'},
+    lualine_y = {},
+    lualine_z = {}
   },
   inactive_sections = {
     lualine_a = {},

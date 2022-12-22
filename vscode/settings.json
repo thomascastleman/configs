@@ -1,59 +1,69 @@
 {
-    "editor.rulers": [
-        80,
-        100
-    ],
-    "reason.path.ocamlmerlin": "/home/tc/.opam/4.11.0/bin/ocamlmerlin",
-    "reason.diagnostics.tools": [
-        "merlin"
-    ],
-    "reason.codelens.enabled": true,
-    "ocaml-formatter.ocamlformat-path": "/home/tc/.opam/4.11.0/bin/ocamlformat",
-    "[ocaml]": {
-        "editor.defaultFormatter": "badochov.ocaml-formatter",
-        "editor.formatOnSave": true
+  "editor.rulers": [80, 100],
+  "reason.path.ocamlmerlin": "/home/tc/.opam/4.11.0/bin/ocamlmerlin",
+  "reason.diagnostics.tools": ["merlin"],
+  "reason.codelens.enabled": true,
+  "ocaml-formatter.ocamlformat-path": "/home/tc/.opam/4.11.0/bin/ocamlformat",
+  "[ocaml]": {
+    "editor.defaultFormatter": "badochov.ocaml-formatter",
+    "editor.formatOnSave": true
+  },
+  "[rust]": {
+    "editor.inlayHints.enabled": "on",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "editor.lineNumbers": "relative",
+  "editor.formatOnSave": true,
+  "workbench.startupEditor": "none",
+  "todohighlight.keywords": [
+    {
+      "text": "NOTE",
+      "color": "white",
+      "backgroundColor": "#808080",
+      "borderRadius": "3px"
     },
-    "[rust]": {
-        "editor.inlayHints.enabled": "on",
-        "editor.formatOnSave": true
+    {
+      "text": "todo!",
+      "color": "white",
+      "backgroundColor": "#4d88ff",
+      "borderRadius": "3px"
     },
-    "rust-analyzer.checkOnSave.command": "clippy",
-    "editor.lineNumbers": "relative",
-    "editor.formatOnSave": true,
-    "workbench.startupEditor": "none",
-    "todohighlight.keywords": [
-        {
-            "text": "NOTE",
-            "color": "white",
-            "backgroundColor": "#808080",
-            "borderRadius": "3px"
-        },
-        {
-            "text": "todo!",
-            "color": "white",
-            "backgroundColor": "#4d88ff",
-            "borderRadius": "3px"
-        },
-        {
-            "text": "TODO",
-            "color": "white",
-            "backgroundColor": "#4d88ff",
-            "borderRadius": "3px"
-        },
-        {
-            "text": "XXX",
-            "color": "white",
-            "borderRadius": "3px",
-            "backgroundColor": "#ff4d4d"
-        },
-        {
-            "text": "DEBUG",
-            "color": "white",
-            "borderRadius": "3px",
-            "backgroundColor": "#ff33cc"
-        }
-    ],
-    "workbench.colorTheme": "Dracula Soft",
-    "workbench.iconTheme": "Monokai Pro Icons",
-    "cmake.buildBeforeRun": false
+    {
+      "text": "TODO",
+      "color": "white",
+      "backgroundColor": "#4d88ff",
+      "borderRadius": "3px"
+    },
+    {
+      "text": "XXX",
+      "color": "white",
+      "borderRadius": "3px",
+      "backgroundColor": "#ff4d4d"
+    },
+    {
+      "text": "DEBUG",
+      "color": "white",
+      "borderRadius": "3px",
+      "backgroundColor": "#ff33cc"
+    }
+  ],
+  "workbench.colorTheme": "Dracula Soft",
+  "workbench.iconTheme": "Monokai Pro Icons",
+  "cmake.buildBeforeRun": false,
+  "idf.espIdfPath": "/home/tc/esp/esp-idf",
+  "idf.pythonBinPath": "/home/tc/.espressif/python_env/idf4.4_py3.10_env/bin/python",
+  "idf.toolsPath": "/home/tc/.espressif",
+  "idf.customExtraPaths": "/home/tc/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin:/home/tc/.espressif/tools/xtensa-esp32s2-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32s2-elf/bin:/home/tc/.espressif/tools/xtensa-esp32s3-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32s3-elf/bin:/home/tc/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch3-8.4.0/riscv32-esp-elf/bin:/home/tc/.espressif/tools/esp32ulp-elf/2.28.51-esp-20191205/esp32ulp-elf-binutils/bin:/home/tc/.espressif/tools/esp32s2ulp-elf/2.28.51-esp-20191205/esp32s2ulp-elf-binutils/bin:/home/tc/.espressif/tools/cmake/3.20.3/bin:/home/tc/.espressif/tools/openocd-esp32/v0.11.0-esp32-20211220/openocd-esp32/bin:/home/tc/.espressif/tools/ninja/1.10.2",
+  "idf.customExtraVars": "{\"OPENOCD_SCRIPTS\":\"/home/tc/.espressif/tools/openocd-esp32/v0.11.0-esp32-20211220/openocd-esp32/share/openocd/scripts\"}",
+  "idf.gitPath": "git",
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
 }

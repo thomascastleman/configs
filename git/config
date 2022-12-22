@@ -3,7 +3,7 @@
 [color]
 	ui = true
 [core]
-	autocrlf = input
+	autocrlf = false
 	safecrlf = true
 [alias]
 	a = add
@@ -29,3 +29,5 @@
 [user]
 	name = Thomas Castleman
 	email = thomascastleman0@gmail.com
+[init]
+	defaultBranch = main
