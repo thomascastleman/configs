@@ -18,8 +18,17 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[verilog]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "kukdh1.verible-formatter"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "verilog.formatting.veribleVerilogFormatter.path": "/usr/local/bin/verible-verilog-format",
+  "C_Cpp.clang_format_fallbackStyle": "{ ColumnLimit: 100 }",
   "rust-analyzer.checkOnSave.command": "clippy",
-  "editor.lineNumbers": "relative",
   "editor.formatOnSave": true,
   "workbench.startupEditor": "none",
   "todohighlight.keywords": [
@@ -52,18 +61,33 @@
       "color": "white",
       "borderRadius": "3px",
       "backgroundColor": "#ff33cc"
+    },
+    {
+      "text": "OPT",
+      "color": "white",
+      "borderRadius": "3px",
+      "backgroundColor": "#00cca3"
     }
   ],
-  "workbench.colorTheme": "Dracula Soft",
-  "workbench.iconTheme": "Monokai Pro Icons",
+  "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+  "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
   "cmake.buildBeforeRun": false,
   "idf.espIdfPath": "/home/tc/esp/esp-idf",
   "idf.pythonBinPath": "/home/tc/.espressif/python_env/idf4.4_py3.10_env/bin/python",
   "idf.toolsPath": "/home/tc/.espressif",
   "idf.customExtraPaths": "/home/tc/.espressif/tools/xtensa-esp32-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32-elf/bin:/home/tc/.espressif/tools/xtensa-esp32s2-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32s2-elf/bin:/home/tc/.espressif/tools/xtensa-esp32s3-elf/esp-2021r2-patch3-8.4.0/xtensa-esp32s3-elf/bin:/home/tc/.espressif/tools/riscv32-esp-elf/esp-2021r2-patch3-8.4.0/riscv32-esp-elf/bin:/home/tc/.espressif/tools/esp32ulp-elf/2.28.51-esp-20191205/esp32ulp-elf-binutils/bin:/home/tc/.espressif/tools/esp32s2ulp-elf/2.28.51-esp-20191205/esp32s2ulp-elf-binutils/bin:/home/tc/.espressif/tools/cmake/3.20.3/bin:/home/tc/.espressif/tools/openocd-esp32/v0.11.0-esp32-20211220/openocd-esp32/bin:/home/tc/.espressif/tools/ninja/1.10.2",
-  "idf.customExtraVars": "{\"OPENOCD_SCRIPTS\":\"/home/tc/.espressif/tools/openocd-esp32/v0.11.0-esp32-20211220/openocd-esp32/share/openocd/scripts\"}",
+  "idf.customExtraVars": {
+    "OPENOCD_SCRIPTS": "/home/tc/.espressif/tools/openocd-esp32/v0.11.0-esp32-20211220/openocd-esp32/share/openocd/scripts"
+  },
   "idf.gitPath": "git",
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
-  }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "black-formatter.args": ["--line-length", "80"]
 }

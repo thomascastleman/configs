@@ -65,3 +65,9 @@ export LIBCLANG_PATH=~/.espressif/tools/xtensa-esp32-elf-clang/esp-14.0.0-202204
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
+# Add ~/.local/bin to path
+export PATH="$HOME/.local/bin:$PATH"
+
+# Add racket binaries to path
+export PATH="/usr/racket/bin:$PATH"
+
